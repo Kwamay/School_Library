@@ -22,11 +22,13 @@ class Person
   end
 end
 
-person = Person.new(99, 'Kwame')
-puts person.age
-puts person.name
-person.name = 'Kwame'
-person.age = 49
-puts person.age
-puts person.name
-puts person.can_use_services?
+def _correct_name
+  @name
+end
+
+private
+
+def of_age?
+  @age >= 18
+ end
+end
