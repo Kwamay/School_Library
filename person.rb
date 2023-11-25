@@ -1,4 +1,5 @@
 require_relative 'nameable'
+
 class Person < Nameable
   attr_accessor :name, :age, :rentals
   attr_reader :id
@@ -12,6 +13,14 @@ class Person < Nameable
     @rentals = []
   end
 
+  private
+
+  def of_age?
+    @age >= 18
+  end
+
+  public
+
   def can_use_services?
     of_age? || @parent_permission
   end
@@ -22,11 +31,5 @@ class Person < Nameable
 
   def add_rentals(rental)
     @rentals << rental
-  end
-
-  private
-
-  def of_age?
-    @age >= 18
   end
 end
