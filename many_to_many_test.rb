@@ -1,6 +1,6 @@
 require_relative 'book'
 require_relative 'person'
-require_relative 'rental'
+require_relative 'rentals'
 
 book1 = Book.new('In the Chest of a woman', 'Efo Kwadwo Mawugbe')
 book2 = Book.new('Good morning Holy Spirit', 'Benny Hinn')
