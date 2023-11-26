@@ -12,39 +12,39 @@ def display_menu
 end
 
 def process_option(choice, app)
-    case choice
-    when 1
-      app.list_books
-    when 2
-      app.list_people
-    when 3
-      app.create_person
-    when 4
-      app.create_book
-    when 5
-      app.create_rental
-    when 6
-      app.list_rentals_for_person
-    else
-      puts 'Invalid option. Please choose a valid option.'
-    end
+  case choice
+  when 1
+    app.list_books
+  when 2
+    app.list_people
+  when 3
+    app.create_person
+  when 4
+    app.create_book
+  when 5
+    app.create_rental
+  when 6
+    app.list_rentals_for_person
+  else
+    puts 'Invalid option. Please choose a valid option.'
   end
-  
-  def main
-    puts 'Welcome to School Library App!'
-    app = App.new
-  
-    loop do
-      display_menu
-      choice = gets.chomp.to_i
-  
-      if choice == 7
-        puts 'Thank you for using this app!'
-        break
-      end
-  
-      process_option(choice, app)
+end
+
+def main
+  puts 'Welcome to School Library App!'
+  app = App.new
+
+  loop do
+    display_menu
+    choice = gets.chomp.to_i
+
+    if choice == 7
+      puts 'Thank you for using this app!'
+      break
     end
+
+    process_option(choice, app)
   end
-  
-  main
+end
+
+main
